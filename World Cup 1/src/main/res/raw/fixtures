@@ -1,0 +1,400 @@
+{
+    "Fixtures": [
+        {
+            "13-June-2014": [
+                {
+                    "group": "A",
+                    "team1": "BRAZIL",
+                    "team2": "CROATIA",
+                    "score": "-:-",
+                    "venue": "Sao Paulo"
+                },
+                {
+                    "group": "A",
+                    "team1": "Mexico",
+                    "team2": "CAMEROON",
+                    "score": "-:-",
+                    "venue": "Natal"
+                }
+            ]
+        },
+        {
+            "14-June-2014": [
+                {
+                    "group": "B",
+                    "team1": "SPAIN",
+                    "team2": "NETHERLANDS",
+                    "score": "-:-",
+                    "venue": "Salvador"
+                },
+                {
+                    "group": "B",
+                    "team1": "CHILE",
+                    "team2": "AUSTRALIA",
+                    "score": "-:-",
+                    "venue": "Cuiaba"
+                },
+                {
+                    "group": "C",
+                    "team1": "COLOMBIA",
+                    "team2": "GREECE",
+                    "score": "-:-",
+                    "venue": "Belo Horizonte"
+                }
+            ]
+        },
+        {
+            "15-June-2014": [
+                {
+                    "group": "D",
+                    "team1": "URUGUAY",
+                    "team2": "COSTA RICA",
+                    "score": "-:-",
+                    "venue": "Fortaleza"
+                },
+                {
+                    "group": "D",
+                    "team1": "ENGLAND",
+                    "team2": "ITALY",
+                    "score": "-:-",
+                    "venue": "Manaus"
+                },
+                {
+                    "group": "C",
+                    "team1": "IVORY COAST",
+                    "team2": "JAPAN",
+                    "score": "-:-",
+                    "venue": "Recife"
+                },
+                {
+                    "group": "E",
+                    "team1": "SWITZERLAND",
+                    "team2": "ECUADOR",
+                    "score": "-:-",
+                    "venue": "Brasilia"
+                }
+            ]
+        },
+        {
+            "16-June-2014": [
+                {
+                    "group": "E",
+                    "team1": "FRANCE",
+                    "team2": "HONDURAS",
+                    "score": "-:-",
+                    "venue": "Porto Alegre"
+                },
+                {
+                    "group": "F",
+                    "team1": "ARGENTINA",
+                    "team2": "BOSNIA AND HERZEGOVINA",
+                    "score": "-:-",
+                    "venue": "Rio De Janeiro"
+                },
+                {
+                    "group": "G",
+                    "team1": "GERMANY",
+                    "team2": "PORTUGAL",
+                    "score": "-:-",
+                    "venue": "Salvador"
+                }
+            ]
+        },
+        {
+            "17-June-2014": [
+                {
+                    "group": "F",
+                    "team1": "IRAN",
+                    "team2": "NIGERIA",
+                    "score": "-:-",
+                    "venue": "Curitiba"
+                },
+                {
+                    "group": "G",
+                    "team1": "GHANA",
+                    "team2": "USA",
+                    "score": "-:-",
+                    "venue": "Natal"
+                },
+                {
+                    "group": "H",
+                    "team1": "BELGIUM",
+                    "team2": "ALGERIA",
+                    "score": "-:-",
+                    "venue": "Belo Horizonte"
+                }
+            ]
+        },
+        {
+            "18-June-2014": [
+                {
+                    "group": "A",
+                    "team1": "BRAZIL",
+                    "team2": "MEXICO",
+                    "score": "-:-",
+                    "venue": "Fortaleza"
+                },
+                {
+                    "group": "H",
+                    "team1": "RUSSIA",
+                    "team2": "KOREA",
+                    "score": "-:-",
+                    "venue": "Cuiaba"
+                },
+                {
+                    "group": "B",
+                    "team1": "AUSTRALIA",
+                    "team2": "NETHERLANDS",
+                    "score": "-:-",
+                    "venue": "Porto Alegre"
+                }
+            ]
+        },
+        {
+            "19-June-2014": [
+                {
+                    "group": "B",
+                    "team1": "SPAIN",
+                    "team2": "CHILE",
+                    "score": "-:-",
+                    "venue": "Rio De Janeiro"
+                },
+                {
+                    "group": "A",
+                    "team1": "CAMEROON",
+                    "team2": "CROATIA",
+                    "score": "-:-",
+                    "venue": "Manaus"
+                },
+                {
+                    "group": "C",
+                    "team1": "COLOMBIA",
+                    "team2": "IVORY COAST",
+                    "score": "-:-",
+                    "venue": "BRASILIA"
+                }
+            ]
+        },
+        {
+            "20-June-2014": [
+                {
+                    "group": "D",
+                    "team1": "URUGUAY",
+                    "team2": "ENGLAND",
+                    "score": "-:-",
+                    "venue": "Sao Paulo"
+                },
+                {
+                    "group": "C",
+                    "team1": "JAPAN",
+                    "team2": "GREECE",
+                    "score": "-:-",
+                    "venue": "Natal"
+                },
+                {
+                    "group": "D",
+                    "team1": "ITALY",
+                    "team2": "COSTA RICA",
+                    "score": "-:-",
+                    "venue": "Recife"
+                }
+            ]
+        },
+        {
+            "21-June-2014": [
+                {
+                    "group": "E",
+                    "team1": "SWITZERLAND",
+                    "team2": "FRANCE",
+                    "score": "-:-",
+                    "venue": "Salvador"
+                },
+                {
+                    "group": "E",
+                    "team1": "HONDURAS",
+                    "team2": "ECUADOR",
+                    "score": "-:-",
+                    "venue": "Curitiba"
+                },
+                {
+                    "group": "F",
+                    "team1": "ARGENTINA",
+                    "team2": "IRAN",
+                    "score": "-:-",
+                    "venue": "Belo Horizonte"
+                }
+            ]
+        },
+        {
+            "22-June-2014": [
+                {
+                    "group": "G",
+                    "team1": "GERMANY",
+                    "team2": "GHANA",
+                    "score": "-:-",
+                    "venue": "Fortaleza"
+                },
+                {
+                    "group": "F",
+                    "team1": "NIGERIA",
+                    "team2": "BOSNIA AND HERZEGOVINA",
+                    "score": "-:-",
+                    "venue": "Cuiaba"
+                },
+                {
+                    "group": "H",
+                    "team1": "BELGIUM",
+                    "team2": "RUSSIA",
+                    "score": "-:-",
+                    "venue": "Rio De Janeiro"
+                }
+            ]
+        },
+        {
+            "23-June-2014": [
+                {
+                    "group": "H",
+                    "team1": "KOREA",
+                    "team2": "ALGERIA",
+                    "score": "-:-",
+                    "venue": "Porto Alegre"
+                },
+                {
+                    "group": "G",
+                    "team1": "USA",
+                    "team2": "PORTUGAL",
+                    "score": "-:-",
+                    "venue": "Manaus"
+                },
+                {
+                    "group": "B",
+                    "team1": "AUSTRALIA",
+                    "team2": "SPAIN",
+                    "score": "-:-",
+                    "venue": "Curitiba"
+                },
+                {
+                    "group": "B",
+                    "team1": "NETHERLANDS",
+                    "team2": "CHILE",
+                    "score": "-:-",
+                    "venue": "Sao Paulo"
+                }
+            ]
+        },
+        {
+            "24-June-2014": [
+                {
+                    "group": "A",
+                    "team1": "CAMEROON",
+                    "team2": "BRAZIL",
+                    "score": "-:-",
+                    "venue": "Brasilia"
+                },
+                {
+                    "group": "A",
+                    "team1": "CROATIA",
+                    "team2": "MEXICO",
+                    "score": "-:-",
+                    "venue": "Recife"
+                },
+                {
+                    "group": "D",
+                    "team1": "ITALY",
+                    "team2": "URUGUAY",
+                    "score": "-:-",
+                    "venue": "Natal"
+                },
+                {
+                    "group": "D",
+                    "team1": "COSTA RICA",
+                    "team2": "ENGLAND",
+                    "score": "-:-",
+                    "venue": "Belo Horizonte"
+                }
+            ]
+        },
+        {
+            "25-June-2014": [
+                {
+                    "group": "C",
+                    "team1": "JAPAN",
+                    "team2": "COLOMBIA",
+                    "score": "-:-",
+                    "venue": "Cuiaba"
+                },
+                {
+                    "group": "C",
+                    "team1": "GREECE",
+                    "team2": "IVORY COAST",
+                    "score": "-:-",
+                    "venue": "Fortaleza"
+                },
+                {
+                    "group": "F",
+                    "team1": "NIGERIA",
+                    "team2": "ARGENTINA",
+                    "score": "-:-",
+                    "venue": "Porto Alegre"
+                },
+                {
+                    "group": "F",
+                    "team1": "BOSNIA AND HERZEGOVINA",
+                    "team2": "IRAN",
+                    "score": "-:-",
+                    "venue": "Salvador"
+                }
+            ]
+        },
+        {
+            "26-June-2014": [
+                {
+                    "group": "E",
+                    "team1": "HONDURAS",
+                    "team2": "SWITZERLAND",
+                    "score": "-:-",
+                    "venue": "Manaus"
+                },
+                {
+                    "group": "E",
+                    "team1": "ECUADOR",
+                    "team2": "FRANCE",
+                    "score": "-:-",
+                    "venue": "Rio De Janeiro"
+                },
+                {
+                    "group": "G",
+                    "team1": "USA",
+                    "team2": "GERMANY",
+                    "score": "-:-",
+                    "venue": "Recife"
+                },
+                {
+                    "group": "G",
+                    "team1": "PORTUGAL",
+                    "team2": "GHANA",
+                    "score": "-:-",
+                    "venue": "Brasilia"
+                }
+            ]
+        },
+        {
+            "27-June-2014": [
+                {
+                    "group": "H",
+                    "team1": "KOREA",
+                    "team2": "BELGIUM",
+                    "score": "-:-",
+                    "venue": "Sao Paulo"
+                },
+                {
+                    "group": "H",
+                    "team1": "ALGERIA",
+                    "team2": "RUSSIA",
+                    "score": "-:-",
+                    "venue": "Curitiba"
+                }
+            ]
+        }
+    ]
+}
