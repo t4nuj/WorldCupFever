@@ -28,6 +28,8 @@ import com.parse.ParseAnalytics;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.revmob.RevMob;
+import com.revmob.RevMobTestingMode;
 import com.worldcup1.chooseTeamFragment.ChooseTeamFragment;
 import com.worldcup1.chooseTeamFragment.TeamSelectedFragment;
 import com.worldcup1.fixturesFragment.FixtureFragment;
@@ -51,6 +53,7 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
     private String mTeamUrl = "http://www.fifa.com/worldcup/news/rss.xml";
+    //RevMob revmob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +71,11 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-        AdFragment adFragment = new AdFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container2,adFragment).commit();
+        AdFragment adFragment = (AdFragment) getSupportFragmentManager().findFragmentById(R.id.container2);
+//        getSupportFragmentManager().beginTransaction().add(R.id.container2,adFragment).commit();
+        if (adFragment != null && adFragment.isInLayout()) {
+            adFragment.addBanner();
+        }
         InitializeParse initializeParse = new InitializeParse();
         initializeParse.execute();
     }
@@ -89,6 +95,7 @@ public class MainActivity extends ActionBarActivity
             case 1:
                 FixtureFragment fixtureFragment = new FixtureFragment();
                 fragmentManager.beginTransaction().replace(R.id.container,fixtureFragment ).commit();
+                this.onSectionAttached(2);
                 break;
             case 2:
             {
@@ -104,6 +111,7 @@ public class MainActivity extends ActionBarActivity
                     ChooseTeamFragment chooseTeamFragment = new ChooseTeamFragment();
                     fragmentManager.beginTransaction().replace(R.id.container,chooseTeamFragment).commit();
                 }
+                this.onSectionAttached(3);
 
             }
             break;
@@ -112,7 +120,8 @@ public class MainActivity extends ActionBarActivity
                 rssFragment.setRss_url(mTeamUrl);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container,rssFragment)
-                        .commit();}
+                        .commit();
+            this.onSectionAttached(4);}
             break;
 
         }
@@ -129,6 +138,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = "FIFA.com News";
                 break;
         }
     }
@@ -213,6 +225,9 @@ public class MainActivity extends ActionBarActivity
         @Override
         protected Void doInBackground(Void... voids) {
             Parse.initialize(MainActivity.this,"Xbj97Y9tSrByJKkTLzfBlG8u4heGa78N1bRNvHOi","ddOlzDeD1IEslrPVhhQqZSf1EeAwn7WFtZvDnAkQ");
+            //revmob = RevMob.start(MainActivity.this);
+            //revmob.setTestingMode(RevMobTestingMode.WITH_ADS); // with this line, RevMob will always deliver a sample ad
+
             /*ParseQuery<ParseObject> parseObjectParseQuery = ParseQuery.getQuery("MyJson");
             final JSONObject[] jsonObjectTemp = {new JSONObject()};
             GetCallback<ParseObject> getCallback = new GetCallback<ParseObject>() {

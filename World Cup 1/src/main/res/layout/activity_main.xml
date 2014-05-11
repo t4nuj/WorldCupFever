@@ -19,11 +19,12 @@
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_weight="2"/>
-           <FrameLayout
+           <fragment
                android:id="@+id/container2"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:layout_weight="8"/>
+               android:layout_weight="8"
+               class="com.worldcup1.AdFragment"/>
 
            </LinearLayout>
 

@@ -17,6 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data android:name="com.revmob.app.id" android:value="5365def3957861df4af4181e"/>
+
     </application>
 
 </manifest>
