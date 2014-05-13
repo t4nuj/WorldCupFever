@@ -6,5 +6,5 @@ package com.worldcup1.chooseTeamFragment;
 public class teamClass {
     String name;
     String trivia;
-
+    int imgResource;
 }
