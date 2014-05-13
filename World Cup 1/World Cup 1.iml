@@ -73,7 +73,13 @@
     <orderEntry type="library" exported="" name="revmob-6.8.3" level="project" />
     <orderEntry type="library" exported="" name="Parse-1.4.3" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
+    <orderEntry type="library" exported="" name="ComGoogleAndroidGmsPlayServices4323.aar" level="project" />
     <orderEntry type="library" exported="" name="ComAndroidSupportAppcompatV71910.aar" level="project" />
+    <orderEntry type="library" name="Gradle: ComGoogleAndroidGmsPlayServices4323.aar" level="project" />
+    <orderEntry type="library" name="Gradle: support-v4-19.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: Parse-1.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: ComAndroidSupportAppcompatV71910.aar" level="project" />
+    <orderEntry type="library" name="Gradle: revmob-6.8.3" level="project" />
   </component>
 </module>
 

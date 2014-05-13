@@ -65,14 +65,17 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+
         mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
         AdFragment adFragment = (AdFragment) getSupportFragmentManager().findFragmentById(R.id.container2);
 //        getSupportFragmentManager().beginTransaction().add(R.id.container2,adFragment).commit();
+
         if (adFragment != null && adFragment.isInLayout()) {
             adFragment.addBanner();
         }

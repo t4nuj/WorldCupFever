@@ -5,5 +5,13 @@
     android:layout_height="match_parent"
     android:id="@+id/p1">
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ad"
+        android:textSize="20sp"
+        android:textAlignment="viewEnd"
+        android:id="@+id/t1"
+        android:visibility="invisible"
+        />
 </LinearLayout>

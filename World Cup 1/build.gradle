@@ -22,4 +22,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile files('src/main/libs/Parse-1.4.3.jar')
     compile files('src/main/libs/revmob-6.8.3.jar')
+    compile 'com.google.android.gms:play-services:4.3.23'
+
 }

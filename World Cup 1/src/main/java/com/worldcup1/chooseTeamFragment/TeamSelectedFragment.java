@@ -70,7 +70,7 @@ public class TeamSelectedFragment extends Fragment {
             parseObjectParseQuery.getInBackground("JOlsnmKivl", new GetCallback<ParseObject>() {
                 @Override
                 public void done(ParseObject parseObject, ParseException e) {
-                    if(e != null)
+                    if(e == null)
                     {
                         Log.v("supporters : ",Integer.toString(parseObject.getInt(teamName)));
                         setmSupporters(parseObject.getInt(teamName));

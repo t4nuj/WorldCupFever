@@ -2,6 +2,7 @@ package com.worldcup1.fixturesFragment;
 
 import android.app.ExpandableListActivity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -40,13 +41,13 @@ public class FixtureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container ,Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fixture_fragment_layout,container,false);
-        FixtureGetter fixtureGetter = new FixtureGetter(getActivity().getBaseContext());
-        fixtures  = fixtureGetter.parseJsonObject();
+
         listView = (ExpandableListView) rootView.findViewById(R.id.fixturesListView);
 //        MyAdapter2 myAdapter2 = new MyAdapter2(getActivity(),R.layout.fixture_fragment_list_item,fixtures);
 //        listView.setAdapter(myAdapter2);
-        MyAdapter3 myAdapter3 = new MyAdapter3(getActivity(),R.layout.fixture_fragment_list_item,R.layout.fixture_fragment_list_child,fixtures);
-        listView.setAdapter(myAdapter3);
+        PopulateView populateView = new PopulateView();
+        populateView.execute();
+
         return rootView;
     }
 
@@ -218,5 +219,24 @@ public class FixtureFragment extends Fragment {
 
         }
     }
+
+    public class PopulateView extends AsyncTask<Void,Void,Void>
+    {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            FixtureGetter fixtureGetter = new FixtureGetter(getActivity());
+            fixtures  = fixtureGetter.parseJsonObject();
+            return null;
+        }
+
+        @Override
+        public void onPostExecute(Void result)
+        {
+            MyAdapter3 myAdapter3 = new MyAdapter3(getActivity(),R.layout.fixture_fragment_list_item,R.layout.fixture_fragment_list_child,fixtures);
+            listView.setAdapter(myAdapter3);
+        }
+
+    };
 
 }

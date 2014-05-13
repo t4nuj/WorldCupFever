@@ -1,17 +1,23 @@
 package com.worldcup1.chooseTeamFragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -29,6 +35,9 @@ public class ChooseTeamFragment extends Fragment {
     static boolean mteamSelected;
     int mSupporters;
     teamClass mTeam;
+    AlertDialog alertDialog =null;
+    AlertDialog alertDialog2 = null;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -36,34 +45,74 @@ public class ChooseTeamFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.choose_fragment_layout,container,false);
         setTeam();
         listView = (ListView) rootView.findViewById(R.id.listView2);
-
         listView.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_choose_team, R.id.label, teams));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mteamSelected = true;
+            public void onItemClick(AdapterView<?> adapterView, View view, final int j, long l) {
 
-                SharedPreferences settings;
-                settings = getActivity().getSharedPreferences("Selected_Team", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putBoolean("isTeamSelected",true);
-                editor.putInt("mTeamIndex", i);
-                editor.putString("mTeamName",teams[i]);
-                editor.putString("mTeamTrivia",team[i].trivia);
-                editor.commit();
 
-                UpdateSupporters updateSupporters = new UpdateSupporters(teams[i]);
-                updateSupporters.execute();
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                //builder.setView();
+               // builder.setView(getLayoutInflater(savedInstanceState).inflate())
+                builder.setMessage("Number of Supporters of "+teams[j]+" is "+getSupporters(teams[j]))
+                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                mteamSelected = true;
 
-                TeamSelectedFragment teamSelectedFragment = new TeamSelectedFragment(teams[i],team[i].trivia,i);
+                                SharedPreferences settings;
+                                settings = getActivity().getSharedPreferences("Selected_Team", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = settings.edit();
+                                editor.putBoolean("isTeamSelected", true);
+                                editor.putInt("mTeamIndex", j);
+                                editor.putString("mTeamName", teams[j]);
+                                editor.putString("mTeamTrivia", team[j].trivia);
+                                editor.commit();
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,teamSelectedFragment).commit();
+                                UpdateSupporters updateSupporters = new UpdateSupporters(teams[j]);
+                                updateSupporters.execute();
+
+                                TeamSelectedFragment teamSelectedFragment = new TeamSelectedFragment(teams[j], team[j].trivia, j);
+
+                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, teamSelectedFragment).commit();
+                            }
+                        })
+                .setNegativeButton("choose another", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //do nothing;
+                    }
+                });
+                alertDialog2 = builder.create();
+                alertDialog2.show();
+
 
 
             }
         });
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Choose Team Message")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+        alertDialog = builder.create();
+        alertDialog.show();
+
+        //BackgroundTasks1 backgroundTasks1 = new BackgroundTasks1();
+//        backgroundTasks1.execute();
+
 
         return rootView;
+    }
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(alertDialog!= null && alertDialog.isShowing()) alertDialog.dismiss();
+        if(alertDialog2!=null && alertDialog2.isShowing()) alertDialog2.dismiss();
     }
 
     public void setTeam()
@@ -245,4 +294,35 @@ public class ChooseTeamFragment extends Fragment {
             return null;
         }
     }
+
+    public class BackgroundTasks1 extends AsyncTask<Void,Void,Void>
+    {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            //listView = (ListView) getView().findViewById(R.id.listView2);
+
+            return null;
+        }
+    }
+
+    public String getSupporters(final String teamName)
+    {   final String i = "";
+        ParseQuery<ParseObject> parseObjectParseQuery = ParseQuery.getQuery("Supporters");
+        parseObjectParseQuery.getInBackground("JOlsnmKivl", new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, ParseException e) {
+                if(e == null)
+                {
+                    //Log.v("supporters : ", Integer.toString(parseObject.getInt(teamName)));
+                    i.concat(Integer.toString(parseObject.getInt(teamName)));
+                }
+            }
+        });
+        return  i;
+    }
+
+
+
+
 }
