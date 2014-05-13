@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.revmob.RevMob;
 import com.revmob.RevMobTestingMode;
 import com.revmob.ads.banner.RevMobBanner;
@@ -20,14 +21,25 @@ import com.revmob.ads.banner.RevMobBanner;
  */
 public class AdFragment extends Fragment {
 
-    RevMob revMob;
-    RevMobBanner banner;
+//    RevMob revMob;
+//    RevMobBanner banner;
     AdView adView;
+    private InterstitialAd interstitial;
+
+
 
     @Override
      public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceStata)
      {
          View rootView = inflater.inflate(R.layout.ad_fragment,container,false);
+         interstitial = new InterstitialAd(getActivity());
+         interstitial.setAdUnitId("ca-app-pub-9019119684545766/2309488336");
+
+         // Create ad request.
+         AdRequest adRequest1 = new AdRequest.Builder().build();
+
+         // Begin loading your interstitial.
+         interstitial.loadAd(adRequest1);
 
          return rootView;
 
@@ -49,13 +61,19 @@ public class AdFragment extends Fragment {
                 .addTestDevice("A11589D53CC07A3741607F3F273223EA")
                 .build();
         adView.loadAd(adRequest);
+
     }
     @Override
     public void onResume() {
-        super.onResume();
         if (adView != null) {
             adView.resume();
         }
+        displayInterstitial();
+
+        super.onResume();
+
+
+
     }
 
     @Override
@@ -75,6 +93,10 @@ public class AdFragment extends Fragment {
         }
         super.onDestroy();
     }
-
+    public void displayInterstitial() {
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
+    }
 
 }

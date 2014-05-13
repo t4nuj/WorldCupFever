@@ -22,6 +22,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
@@ -47,6 +49,7 @@ public class MainActivity extends ActionBarActivity
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
+
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
@@ -81,8 +84,16 @@ public class MainActivity extends ActionBarActivity
         }
         InitializeParse initializeParse = new InitializeParse();
         initializeParse.execute();
-    }
 
+
+
+
+    }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+    }
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
@@ -267,4 +278,6 @@ public class MainActivity extends ActionBarActivity
 
         }
     }
+
+
 }
